@@ -1,0 +1,22 @@
+@layout("layout")
+
+@section("style-section")
+{{style("css/login")}}
+@endsection
+
+@section("content")
+    <div class="container">
+    <div class="login">Login{{ name + " " + age }}</div>
+    @if(age >= 20)
+    <h1>You are adult</h1>
+    @else
+    <h1>You are young</h1>
+    @endif
+    <ul>
+    @each(friend in friends)
+    <li>{{ friend }}</li>
+    @endeach
+    </ul>
+<p>{{ address.postcode }}</p>
+    </div>
+    @endsection
