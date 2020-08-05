@@ -16,6 +16,12 @@ class AuthController {
         return view.render("register")
     }
 }
+.
+.
+.
+.
+.
+.
 
 
 module.exports = AuthController
