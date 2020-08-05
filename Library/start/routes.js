@@ -19,21 +19,6 @@ const Route = use('Route')
 Route.on('/').render('home')
 // Route.on("/login").render("login")
 
-Route.get("/login" , (context) => {
-const{view, request, response} = context
+Route.get("/login" ,"AuthController.login");
 
-const name = "Ponlawat";
-const age = 20;
-const friends = ["Sue","Bam","Friend","Fern"];
-const address = {
-    postcode: "10140",
-    country: "Thailand",
-};
-
-return view.render("login", {name,age,friends,address})
-})
-
-Route.get("/register" , ({ view }) => {
-return view.render("register")
-})
-
+Route.get("/register" ,"AuthController.register");
