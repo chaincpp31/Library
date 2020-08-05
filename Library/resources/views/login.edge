@@ -1,6 +1,7 @@
 @layout("layout")
 
 @section("style-section")
+
 {{style("css/login")}}
 @endsection
 
@@ -18,5 +19,6 @@
     @endeach
     </ul>
 <p>{{ address.postcode }}</p>
+<img src="{{assetsUrl('image/pyramid.png')}}"/>
     </div>
     @endsection
