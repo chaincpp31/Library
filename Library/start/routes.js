@@ -17,3 +17,16 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+Route.get("/register","AuthController.register");
+
+//Route.on('/login').render("login");
+
+Route.get("/login", "AuthController.login")
+Route.post("/login", "AuthController.loginUser")
+
+//project workspace
+
+Route.on('/layout1').render('layout1')
+
+
+
