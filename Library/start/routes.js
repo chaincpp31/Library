@@ -27,6 +27,7 @@ Route.post("/login", "AuthController.loginUser")
 //project workspace
 
 Route.on('/layout1').render('layout1')
+Route.on('/Index').render('Index')
 
 
 
