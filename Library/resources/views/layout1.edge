@@ -12,10 +12,11 @@
     
     <title>Document</title>
 </head>
+@!section("head-section")
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand">Navbar</a>
+          <img src="{{assetsUrl("image/camt_horizontal.png")}}">
           <form class="d-flex">
             <div class="search-btnSubmit">
                 <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
@@ -26,6 +27,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-      </nav>
+    </nav>
+    @!section("top-bar")
 </body>
 </html>
