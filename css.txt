@@ -1,0 +1,10 @@
+position:fixed ทำการล๊อค position ไว้ ณ ตำแหน่งที่กำหนดไว้ เลื่อนจอลงมาก็เลื่อนตาม
+position: absolute 
+z-index จัด layer
+justify-content: center;  /*จัดแกน X*/
+align-items: center;  /*จัดแกน Y*/
+font-size: 20px; /*rem rem เป็นหน่วยเทียบขนาดfont defult ของ browser*/
+overflow-y: hidden ล๊อคหน้าให้ไม่สามารถเลื่อนได้
+width: fit-content ฟิต div ให้เท่ากับขนาดของcontent
+em เป็น relative ที่จะขึ้นอยู่กับ parent element (ขึ้นอยู่กับ browser)
+rem เป็น relative ที่ขึ้นอยู่กับ root element (ขึ้นอยู่กับ div)
