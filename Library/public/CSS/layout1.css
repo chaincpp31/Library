@@ -3,9 +3,11 @@ html,body{
     height: 100vh;
     margin:0;
     padding: 0;
+    overflow-x: hidden;
 }
 .navbar{
-    position:fixed 
+    position: fixed;
+    display: block;
 }
 .navbar-toggler {
     margin-left: 1vw;
@@ -14,7 +16,7 @@ html,body{
 .search-btnSubmit {
     display: flex;
     width: 50vw;
-    position: relative;
+    position: static;
     justify-content: center;
 }
 img {

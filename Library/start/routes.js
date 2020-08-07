@@ -23,12 +23,14 @@ Route.on('/').render('home')
 Route.get("/login" ,"AuthController.login");
 Route.post("/login","AuthController.loginUser")
 
-Route.get("/register" ,"AuthController.register");
+// Route.get("/register" ,"AuthController.register");
 
-Route.on('/').render('welcome')
-Route.get("/register","AuthController.register");
+// Route.on('/').render('welcome')
+// Route.get("/register","AuthController.register");
 
 //Route.on('/login').render("login");
+Route.get("/register", "AuthController.register")
+Route.post("/register", "AuthController.registerUser")
 
 Route.get("/login", "AuthController.login")
 Route.post("/login", "AuthController.loginUser")
@@ -36,6 +38,7 @@ Route.post("/login", "AuthController.loginUser")
 //project workspace
 
 Route.on('/layout1').render('layout1')
+Route.on('/Index').render('Index')
 
 
 

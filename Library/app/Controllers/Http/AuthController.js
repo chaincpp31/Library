@@ -19,15 +19,23 @@ class AuthController {
         // return view.render("login", { name, age, friends, address })
     }
     loginUser({view,request,response}){
-        const profile = request.body
-        console.log(profile)
+        const {username,password} = request.body
+        // const profile = request.body
+        // console.log(profile)
 
         // return view.render("login")
         return response.redirect("/login")
 
     }
-    register = ({view}) => {
+    register  ({view})  {
         return view.render("register")
+    }
+    async registerUser({request, response}){
+        const {email,username, password} = request.body
+        await Database.from("users").insert({email,username,password});
+        console.log(email,username,password)
+
+        return response.redirect("/login")
     }
 }
 
