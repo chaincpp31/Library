@@ -10,8 +10,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     {{ style("css/layout1") }}
     
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '935371073635530',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v8.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     <title>Document</title>
     @!section("section-head")
+    
+     {{script("js/index")}}
 </head>
 <body>
   <div class="container-nevbar">
@@ -34,4 +57,6 @@
     </nav>
     @!section("top-bar")
 </body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0&appId=935371073635530&autoLogAppEvents=1" nonce="AkpkIgUC"></script>
 </html>

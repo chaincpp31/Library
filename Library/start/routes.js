@@ -30,7 +30,9 @@ Route.post("/login","AuthController.loginUser")
 
 //Route.on('/login').render("login");
 Route.get("/register", "AuthController.register")
-Route.post("/register", "AuthController.registerUser")
+Route.post("register", "AuthController.registerUser")
+
+Route.post("/api/register", "AuthController.registerUser")
 
 Route.get("/login", "AuthController.login")
 Route.post("/login", "AuthController.loginUser")
