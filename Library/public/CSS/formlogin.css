@@ -29,7 +29,7 @@ input[type=text], input[type=password] {
   position: relative;
 }
 
-img.avatar {
+img.logo_account {
   width: 40%;
   /* border-radius: 50%; */
 }
@@ -84,5 +84,5 @@ span.psw {
 }
 
 .formContent {
-    padding-top: 4%;
+    padding-top: 4em;
 }

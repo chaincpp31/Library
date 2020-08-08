@@ -24,3 +24,6 @@ html,body{
     width: 8%;
     height: 8%;
 }
+.btn btn-outline-success{
+    width: 1em;
+}
