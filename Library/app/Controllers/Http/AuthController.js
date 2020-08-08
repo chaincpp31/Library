@@ -40,12 +40,12 @@ class AuthController {
     form ({view}){
         return view.render("form")
     }
-    async formregister ({request,response}){
-        const {user,password} = request.body
+    async formregister({request,response}){
+        const {username,password} = request.body
         await Database.form("users").insert({username,password});
         console.log(username,password)
 
-        return response.redirect("/login")
+        return response.redirect("/form")
     }
 }
 
