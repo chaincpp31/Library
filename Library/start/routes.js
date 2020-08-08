@@ -37,10 +37,15 @@ Route.post("/api/register", "AuthController.registerUser")
 Route.get("/login", "AuthController.login")
 Route.post("/login", "AuthController.loginUser")
 
+// Rout.get("/form", "AuthController.form")
+// Rout.post("/form", "AuthController.formregister")
+
 //project workspace
 
 Route.on('/layout1').render('layout1')
-Route.on('/Index').render('Index')
+Route.on('/Index').render('form')
+
+
 
 
 
