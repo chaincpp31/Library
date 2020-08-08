@@ -12,11 +12,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.esm.min.js" integrity="sha384-sKZy8g2KJhBTFCD6cIg8d4EifJxaa8c/iYIERdeKorHWhAgZgQOfqOKMe3xBqye1" crossorigin="anonymous"></script>
 
     {{ style("CSS/layout1") }}
-    @!section("section-head")
     <title>Document</title>
-
+    @!section('head')
 </head>
 <body>
+    <!--slide bar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <img src="{{assetsUrl("image/camt_horizontal.png")}}">
@@ -31,7 +31,6 @@
           </button>
         </div>
     </nav>
-    @!section("top-bar")
+    @!section('content')
 </body>
 </html>
-@!section("content")
