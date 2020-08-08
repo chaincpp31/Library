@@ -1,7 +1,12 @@
-{{ style("css/formlogin") }}
-<body>
+@layout("layout1")
 
-  <form class="modal-content animate" action="/action_page.php" method="post">
+@section('head')
+  {{ style("css/formlogin") }}
+@endsection
+
+@section("content")
+<div class="formContent">
+      <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <img src="image/camt_horizontal.png" alt="Avatar" class="avatar">
     </div>
@@ -13,9 +18,8 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button class="button" type="submit">Login</button>
     </div>
   </form>
-
-</body>
-</html>
+</div>
+@endsection

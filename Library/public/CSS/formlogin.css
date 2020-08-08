@@ -9,7 +9,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
+.button {
   background-color: burlywood;
   color: white;
   padding: 14px 20px;
@@ -19,7 +19,7 @@ button {
   width: 100%;
 }
 
-button:hover {
+.button:hover {
   opacity: 0.8;
 }
 
@@ -81,4 +81,8 @@ span.psw {
      display: block;
      float: none;
   }
+}
+
+.formContent {
+    padding-top: 4%;
 }
