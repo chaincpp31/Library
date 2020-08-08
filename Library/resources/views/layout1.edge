@@ -38,6 +38,12 @@
 </head>
 <body>
   <div class="container-nevbar">
+    {{ style("CSS/layout1") }}
+    <title>Document</title>
+    @!section('head')
+</head>
+<body>
+    <!--slide bar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <img src="{{assetsUrl("image/camt_horizontal.png")}}">
@@ -55,7 +61,7 @@
       </nav>
   </div>
     </nav>
-    @!section("top-bar")
+    @!section('content')
 </body>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0&appId=935371073635530&autoLogAppEvents=1" nonce="AkpkIgUC"></script>
