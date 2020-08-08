@@ -1,27 +1,21 @@
-@layout("layout1")
+{{ style("css/formlogin") }}
+<body>
 
-@section('head')
-  {{ style("css/Index") }}
-@endsection
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="image/camt_horizontal.png" alt="Avatar" class="avatar">
+    </div>
 
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
 
-@section("content")
-<div class="container">
-    <span class="login">Register</span>
-    <form class="form-inline" method="POST" action="{{ route('/register')}}">
-    {{ csrfField() }}
-    <label for="email">Email:</label>
-    <input type="email" id="email"placeholder="Enter E-mail" name="email">
-    <label for="username">Username:</label>
-  <input type="username" id ="username" placeholder="Enter Username" name="username">
-  <label for="pwd">Password:</label>
-  <input type="password" id="pwd" placeholder="Enter Password" name="password">
-  <label for="cfpwd">Confirm Password:</label>
-  <input type="password" id="cfpwd" placeholder="Confirm password" name="confirmpassword">
-  <label>
-    <input type="checkbox" name="remember"> Remember me
-  </label>
-  <button type="submit">Submit</button>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+    </div>
   </form>
-</div>
-@endsection
+
+</body>
+</html>
