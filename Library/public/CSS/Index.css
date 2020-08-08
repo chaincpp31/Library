@@ -1,8 +1,4 @@
-.container-fluid img {
-    width: 8%;
-    height: 8%;
-}
-
+/*carousel Home + newbook*/
 .carousel {
     width: 100vw;
     height: 100vh;
@@ -13,12 +9,15 @@
     height: 100vh;
     z-index: -1;
 
+    
+
 }
- .bg-carousel {  position: absolute;
+ .bg-carousel {  
+    position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 102%;
+    height: max-content;
     background:  linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
@@ -29,11 +28,58 @@
 .control-imgIndex {
     z-index: 1;
 }
+/* .carousel-item img{
+    width: 100vw;
+    height: 100vh;
+}  */
 
-.Textcarousel {
-    display: flex;
+.bg-carousel .textcarousel{
+    position: absolute;
+    top: 20em;
+    left: 15em;
     z-index: 50;
-    color: aliceblue;
+    color: white;
+}
+.carousel-text-camt {
+    font: 2em sans-serif;
+}
+.carousel-text-welcome {
+    font: 4em sans-serif;
 
 }
 
+/*Covid-19*/
+.container-covidAll{
+    background:   linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)
+      ) no-repeat, url(../image/hospital.jpg) repeat 0 0;
+    background-size: 100%; 
+    
+    
+}
+
+.container-covid1 {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: row ;
+    justify-content: center;
+
+
+}
+.container-covid2 {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-evenly;
+    padding-bottom: 8rem;
+
+
+}
+.item-covid1{
+    max-width: 25rem;
+}
+.item-covid{
+    max-width: 18rem;
+}
+/*carousel New Book*/
