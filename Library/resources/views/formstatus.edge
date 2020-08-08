@@ -1,0 +1,33 @@
+@layout("layout1")
+
+@section('head')
+  {{ style("css/formstatus") }}
+@endsection
+
+@section("content")
+<body>
+
+    <div class="formContent">
+<form>
+  <div class="container">
+   <label for="Barcode"><b>Barcode</b></label>
+    <input type="text" placeholder="Scan Barcode" name="Barcode" id="Barcode" required>
+    
+    <div class="custom-select" style="width:200px;">
+  <select>
+    <option value="0">Select option:</option>
+    <option value="1">ยืม</option>
+    <option value="2">คืน</option>
+  </select>
+</div>
+
+    <label for="BookName"><b>Book name</b></label>
+    <input type="text" name="Bookname" id="BookName" required>
+
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+</form>
+</div>
+
+</body>
+@endsection

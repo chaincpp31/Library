@@ -45,6 +45,7 @@ Route.post("/login", "AuthController.loginUser")
 Route.on('/layout1').render('layout1')
 Route.on('/Index').render('Index')
 Route.on('/form').render('formlogin')
+Route.on('/formstatus').render('formstatus')
 
 
 
