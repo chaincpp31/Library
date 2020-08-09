@@ -3,7 +3,7 @@ html,body{
     height: 100vh;
     margin:0;
     padding: 0;
-    /* overflow-x: hidden; */
+    overflow-x: hidden; 
 }
 .navbar-dark{
     position: fixed;
@@ -24,6 +24,10 @@ html,body{
     width: 8%;
     height: 8%;
 }
+<<<<<<< HEAD
 .btn btn-outline-success{
     width: 1em;
 }
+=======
+
+>>>>>>> 625824b20d540d741c7b59dc79a848e5e14a84a5

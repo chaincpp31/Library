@@ -2,39 +2,129 @@
 
 @section('head')
   {{ style("CSS/Index") }}
+  <!--Import Animate On Scroll Library-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 @endsection
 
 @section("content")
 <!--slide bar -->
 <div class="bg-carousel">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carousel-home" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-home" data-slide-to="1"></li>
+        <li data-target="#carousel-home" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{assetsUrl("image/indeximg1.jpg")}}" class="d-block w-100" alt="...">
+          <img src="{{assetsUrl("image/indeximg3.jpg")}}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="{{assetsUrl("image/indeximg3.jpg")}}" class="d-block w-100" alt="...">
+          <img src="{{assetsUrl("image/indeximng2.jpg")}}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
           <img src="{{assetsUrl("image/Indeximg4.jpg")}}" class="d-block w-100" alt="...">
         </div>
       </div>
+          <div class="textcarousel" >
+            <div class="carousel-text-welcome">Welcome<br></div>
+            <div class="carousel-text-camt">Cerativity And Learning Room : College Of Arts, Media And Technology</div>
+        </div>
       <div class="control-imgIndex">
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carousel-home" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only"></span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carousel-home" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only"></span>
         </a>
       </div>
     </div>
+    <!-- Covide-19 -->
+    <div class="container-covidAll">
+    <div class="container-covid1">
+          <!--Danger-->
+          <div class="item-covid1 ">
+          <div class="card text-white bg-danger mb-3" >
+            <div class="card-header">ติดเชื้อสะสม</div>
+            <div class="card-body">
+              <h5 class="card-title">Danger card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container-covid2">
+        <!--Get well-->
+        <div class="item-covid ">
+        <div class="card text-white bg-success mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Success card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+        <!--hospital -->
+        <div class="item-covid">
+        <div class="card text-body  bg-info mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Info card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+        <!--Death-->
+        <div class="item-covid">
+        <div class="card text-white bg-secondary mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Secondary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div> 
+    </div>
+    </div>
+  </div>
+  <!--NewBook-->
+  <div class="bg-carousel-covied">
+  <div class="new-book">
+    <div id="carousel-newBook" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-newBook" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-newBook" data-slide-to="1"></li>
+        <li data-target="#carousel-newBook" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item imgbook active">
+          <img src="{{assetsUrl("image/newbook1.jpg")}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item imgbook">
+          <img src="{{assetsUrl("image/newbook2.jpg")}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item imgbook">
+          <img src="{{assetsUrl("image/newbook3.jpg")}}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <div class="control-imgIndex">
+        <a class="carousel-control-prev" href="#carousel-newBook" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-newBook" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--rule-->
+  <!--about us-->
 </div>
-<!-- Covide-19 -->
+
+
+
 @endsection
