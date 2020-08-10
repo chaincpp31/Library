@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap');
+
 html,body{
     width: 100vw;
     height: 100vh;
@@ -5,7 +7,7 @@ html,body{
     padding: 0;
     overflow-x: hidden; 
 }
-.navbar-dark{
+.navbar{
     position: fixed;
     display: block;
     z-index: 100;
@@ -24,4 +26,43 @@ html,body{
     width: 8%;
     height: 8%;
 }
+ /*menu bar*/
+ #menu-bar {
+    position: fixed;
+    display: block;
+    right: 0;
+    width: 0vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    background-color: rgba(209, 209, 209, 0.473); 
+    z-index: 99;
+    transition: all 0.5s ;
+}
 
+.li-menu li {
+    font-family: 'Mitr', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    padding-left: 2vw;
+}
+#menu-bar ul {
+    list-style-type: none;
+    display: fixed;
+    margin-top: 10vh;
+    padding-left: 0%;
+}
+.li-menu li:hover {
+    background-color: rgba(177, 177, 177, 0.555)
+  }
+#body-content {
+    position: fixed;
+    display: block;
+    right: 0;
+    width: 0vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.507); 
+    z-index: 95;
+    transition: all 0.3s ;
+}

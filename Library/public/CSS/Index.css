@@ -28,10 +28,6 @@
 .control-imgIndex {
     z-index: 1;
 }
-/* .carousel-item img{
-    width: 100vw;
-    height: 100vh;
-}  */
 
 .bg-carousel .textcarousel{
     position: absolute;
@@ -49,6 +45,10 @@
 }
 
 /*Covid-19*/
+.card {
+    width: 18vw;
+    height: 23vh;
+}
 .container-covidAll{
     background:   linear-gradient(
         rgba(0, 0, 0, 0.5), 
@@ -56,6 +56,8 @@
       ) no-repeat, url(../image/hospital.jpg) repeat 0 0;
     background-size: 100%; 
     
+    width: 100vw;
+    height: 100vh;
     
 }
 
