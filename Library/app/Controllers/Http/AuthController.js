@@ -38,7 +38,7 @@ class AuthController {
         return response.redirect("/login")
     }
     form ({view}) {
-        return view.render("form")
+        return view.render("formlogin")
     }
 
 
@@ -47,7 +47,7 @@ class AuthController {
         await Database.form("users").insert({username,password});
         // console.log(username,password)
 
-        return response.redirect("/form")
+        return response.redirect("/formlogin")
     }
 }
 
