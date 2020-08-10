@@ -1,13 +1,19 @@
 @layout("layout1")
 
 @section('head')
+
   {{ style("CSS/Index") }}
   <!--Import Animate On Scroll Library-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 @endsection
 
 @section("content")
+<!--Start Library AOS-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <!--slide bar -->
 <div class="bg-carousel">
   <div id="carousel-home" class="carousel slide" data-ride="carousel">
@@ -27,7 +33,7 @@
           <img src="{{assetsUrl("image/Indeximg4.jpg")}}" class="d-block w-100" alt="...">
         </div>
       </div>
-          <div class="textcarousel" >
+          <div class="textcarousel" data-aos="zoom-in" >
             <div class="carousel-text-welcome">Welcome<br></div>
             <div class="carousel-text-camt">Cerativity And Learning Room : College Of Arts, Media And Technology</div>
         </div>
@@ -44,51 +50,61 @@
     </div>
     <!-- Covide-19 -->
     <div class="container-covidAll">
-    <div class="container-covid1">
-          <!--Danger-->
-          <div class="item-covid1 ">
+    <div class="container-covid1" data-aos="flip-left">
+          <div class="item-covid1 " >
           <div class="card text-white bg-danger mb-3" >
             <div class="card-header">ติดเชื้อสะสม</div>
             <div class="card-body">
-              <h5 class="card-title">Danger card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title" id="Confirmed"></h5>
             </div>
           </div>
         </div>
     </div>
     <div class="container-covid2">
         <!--Get well-->
-        <div class="item-covid ">
+        <div class="item-covid " data-aos="flip-up">
         <div class="card text-white bg-success mb-3">
-          <div class="card-header">Header</div>
+          <div class="card-header">หายแล้ว</div>
           <div class="card-body">
-            <h5 class="card-title">Success card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title" id="Recovered"></h5>
           </div>
         </div>
       </div>
         <!--hospital -->
-        <div class="item-covid">
+        <div class="item-covid " data-aos="flip-right">
         <div class="card text-body  bg-info mb-3">
-          <div class="card-header">Header</div>
+          <div class="card-header">รักษาตัวอยู่ที่โรงพยาบาล</div>
           <div class="card-body">
-            <h5 class="card-title">Info card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title" id="Hospitalized"></h5>
           </div>
         </div>
       </div>
         <!--Death-->
-        <div class="item-covid">
-        <div class="card text-white bg-secondary mb-3">
-          <div class="card-header">Header</div>
+        <div class="item-covid" data-aos="flip-down" >
+        <div class="card text-white bg-secondary mb-3" >
+          <div class="card-header">เสียชีวิต</div>
           <div class="card-body">
-            <h5 class="card-title">Secondary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title" id="Deaths"></h5>
           </div>
         </div> 
     </div>
     </div>
   </div>
+
+
+    <!--  API Covid-19 Connect   -->
+        {{ script("js/APIconnect") }} 
+        <script> 
+        callCovid()
+       </script>
+
+
+
+
+
+
+
+
   <!--NewBook-->
   <div class="bg-carousel-covied">
   <div class="new-book">

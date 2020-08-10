@@ -84,12 +84,13 @@ select::-ms-expand {
 .select {
   position: relative;
   display: flex;
-  width: 20em;
+  width: 10em;
   height: 3em;
   line-height: 3;
   background: lightgray;
   overflow: hidden;
   border-radius: .25em;
+  margin-bottom: 0.8em;
 }
 select {
   flex: 1;
