@@ -26,11 +26,46 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </div>
           </form>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!--menu btn-->
+          <button class="navbar-toggler" type="button" onclick="toggleNav()" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
     </nav>
+
+    <!--menu-bar-->
+    <div id="body-content" onclick="toggleNav()"></div>
+    <div  id="menu-bar" >
+      <ul>
+        <div class="li-menu">
+            <li>หน้าหลัก</li>
+            <li>สถานะ Covid-19</li>
+            <li>หนังสือใหม่</li>
+            <li>กฎระเบียบ</li>
+            <li>About me</li>
+        </div>
+      </ul>
+
+    </div>
+    <script>
+      
+      function toggleNav() {
+            var element = document.getElementById("menu-bar");
+            var bodyEle = document.getElementById("body-content");
+            
+            if  (element.style.width == "20vw"){ 
+                (element.style.width = "0vw");
+                (bodyEle.style.width = "0vw");
+            } 
+            else if (element.style.width = "0vw"){
+                (element.style.width = "20vw");
+                (bodyEle.style.width = "100vw");
+            }
+      }     
+    </script>
+
+
+
     @!section('content')
 </body>
 </html>
