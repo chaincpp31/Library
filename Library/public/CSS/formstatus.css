@@ -64,6 +64,12 @@ a {
 .formContent1 {
     padding-top: 4em;
     width: 50%;
+    float: left;
+}
+.formContent2{
+  padding-top: 4em;
+  width: 50%;
+  float: right;
 }
 
 select {
