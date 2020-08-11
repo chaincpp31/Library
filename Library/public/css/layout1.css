@@ -31,6 +31,7 @@ html,body{
     width: 8%;
     height: 8%;
 }
+
 .btn btn-outline-success{
     width: 1em;
 }
@@ -75,3 +76,4 @@ html,body{
     z-index: 95;
     transition: all 0.3s ;
 }
+
