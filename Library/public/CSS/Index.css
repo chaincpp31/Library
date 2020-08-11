@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-=======
-
-
->>>>>>> 8eca02685540b617dafd8d9ee0eb5a253c0fd666
 /*carousel Home + newbook*/
->>>>>>> 625824b20d540d741c7b59dc79a848e5e14a84a5
 .carousel {
     width: 100vw;
     height: 100vh;
@@ -37,6 +29,10 @@
 .control-imgIndex {
     z-index: 1;
 }
+/* .carousel-item img{
+    width: 100vw;
+    height: 100vh;
+}  */
 
 .bg-carousel .textcarousel{
     position: absolute;
@@ -54,10 +50,6 @@
 }
 
 /*Covid-19*/
-.card {
-    width: 18vw;
-    height: 23vh;
-}
 .container-covidAll{
     background:   linear-gradient(
         rgba(0, 0, 0, 0.5), 
@@ -65,8 +57,6 @@
       ) no-repeat, url(../image/hospital.jpg) repeat 0 0;
     background-size: 100%; 
     
-    width: 100vw;
-    height: 100vh;
     
 }
 
@@ -94,83 +84,3 @@
     max-width: 18rem;
 }
 /*carousel New Book*/
-
-/*rule*/
-.container-rule{
-    background:   linear-gradient(
-        rgba(0, 0, 0, 0.5), 
-        rgba(0, 0, 0, 0.5)
-      ) no-repeat, url(../image/rule.jpg) repeat 0 0;
-    background-size: 100%; 
-    font-family: 'Mitr', sans-serif;
-    height: 100%; 
-    width: 100%;
-
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    
-
-
-}
-.container-rule-fix{
-  height: 200vh; 
-  width: 100vw;
-}
-
-.container-chat{
-  display: flex;
-  flex-direction: column ;
-  width: 100%;
-  height: 100%;
-
-
-
-}
-.kuy-1 {
-  width: 100vw;
-  height: 25vh;
-
-}
-
-.item-chat1{
-  padding: 2% 2% 2% 2%;
-  position: absolute;
-  margin-top: 10vh;
-  left: 5vw;
-  width: 30vw;
-  height: 20vh;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.541); 
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.541);
-
-}
-.item-chat2{
-  padding: 2% 2% 2% 2%;
-  position: absolute;
-  margin-top: 10vh;
-  right:  5vw;
-  width: 30vw;
-  height: 20vh;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.541); 
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.541);
-
-}
-
-
-
-/*about me*/
-
-.container-about{
-    background:   linear-gradient(
-        rgba(0, 0, 0, 0.5), 
-        rgba(0, 0, 0, 0.5)
-      ) no-repeat, url(../image/aboutme.jpg) repeat 0 0;
-    background-size: 100%; 
-
-    width: 100vw;
-    height: 100vh;
-    
-}
