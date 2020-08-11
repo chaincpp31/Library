@@ -27,27 +27,27 @@ class AuthController {
         return response.redirect("/login")
 
     }
-    register  ({view})  {
-        return view.render("register")
-    }
-    async registerUser({request, response}){
-        const {email,username, password} = request.body
-        await Database.from("users").insert({email,username,password});
-        console.log(email,username,password)
+    // register  ({view})  {
+    //     return view.render("register")
+    // }
+    // async registerUser({request, response}){
+    //     const {email,username, password} = request.body
+    //     await Database.from("users").insert({email,username,password});
+    //     console.log(email,username,password)
 
-        return response.redirect("/login")
-    }
+    //     return response.redirect("/login")
+    // }
     form ({view}) {
-        return view.render("formlogin")
+        return view.render("formLogin")
     }
 
 
     async formLogin({request,response}){
         const {username,password} = request.body
-        await Database.form("users").insert({username,password});
-        // console.log(username,password)
+        await Database.from("admin_users").insert({username,password});
+        console.log(username,password)
 
-        return response.redirect("/formlogin")
+        return response.redirect("/form")
     }
 }
 
