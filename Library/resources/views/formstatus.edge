@@ -35,7 +35,8 @@
 <div class="formContent2">
   <form class="modal-content animate">
   <div class="container">
-    <h1>Information</h1>
+    <h1>Add Book</h1>
+    <hr>
     <form class="modal-content animate" method="POST" action="{{ route('/form')}}">
             {{ csrfField() }}
     <div class="container">
@@ -43,6 +44,13 @@
       <input type="text" placeholder="Enter Barcode" name="book_id" required>
       <label for="book_name"><b>Book name</b></label>
       <input type="text" placeholder="Enter Book name" name="book_name" required>
+      <div class="select">
+      <select name="slct" id="slct">
+    <option selected disabled>Category</option>
+    <option value="1">ยืม</option>
+    <option value="2">คืน</option>
+  </select>
+      </div>
       <button class="button" type="submit">Login</button>
     </div>
   </form>
