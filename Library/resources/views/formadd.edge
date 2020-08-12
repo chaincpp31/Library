@@ -1,0 +1,44 @@
+@layout("layout2")
+
+@section('head')
+  {{ style("css/formstatus") }}
+@endsection
+
+@section("content")
+<body>
+    <div class="formContent2">
+  <div class="container">
+    <h1>Add Book</h1>
+    <hr>
+    <form class="modal-content animate addBook" method="POST" action="{{route('/formstatus')}}" enctype="multipart/form-data">
+            {{ csrfField() }}
+    <div class="container">
+      <label for="book_id"><b>Barcode</b></label>
+      <input type="text" placeholder="Enter Barcode" name="book_id" required>
+      <label for="book_name"><b>Book name</b></label>
+      <input type="text" placeholder="Enter Book name" name="book_name" required>
+      <div class="select">
+      <select name="book_category" id="slct">
+            <option selected disabled>Category</option>
+            <option value="1">หนังสือโป๊</option>
+            <option value="2">หนังสือCNX</option>
+      </select>
+      </div>
+      <div class="select">
+      <select name="book_add_del" id="slct">
+            <option selected disabled>Category</option>
+            <option value="1">เพิ่ม</option>
+            <option value="2">ลบ</option>
+      </select>
+      </div>
+      <div class="file_upload">
+  <input type="file" name="book_img">
+      </div>      
+      <button class="registerbtn" type="submit">Submit</button>
+    </div>
+  </form>
+
+</div>
+
+</body>
+@endsection

@@ -1,4 +1,4 @@
-@layout("layout1")
+@layout("layout2")
 
 @section('head')
   {{ style("css/formstatus") }}
@@ -7,16 +7,22 @@
 @section("content")
 <body>
 
+  {{tokenfake}}
+  <script>
+      document.getElementById("token").innerHTML = tokenfake;
+
+
+  </script>
     <div class="formContent1">
-<form class="modal-content animate" method="POST" action="{{ route('/form')}}">
+<form class="modal-content animate" method="POST" action="{{ route('/formstatus')}}">
             {{ csrfField() }}
   <div class="container">
-    <h1> Admin </h1>
+    <h1 id="token"> Admin </h1>
     <hr>
    <label for="Barcode"><b>Barcode</b></label>
-    <input type="text" placeholder="Scan Barcode" name="Barcode" id="Barcode" required>
+    <input type="text" placeholder="Scan Barcode" name="book_id" id="Barcode">
    <div class="select">
-  <select name="slct" id="slct">
+  <select name="book_rent_restore" id="slct">
     <option selected disabled>select option</option>
     <option value="1">ยืม</option>
     <option value="2">คืน</option>
@@ -24,54 +30,26 @@
 </div>
 
     <label for="BookName"><b>Book name</b></label>
-    <input type="text" name="Bookname" id="BookName" required>
+    <input type="text" name="Bookname" id="BookName" >
 
     <label for="ID"><b>Student ID</b></label>
-    <input type="text" placeholder="ID" name="ID" id="ID" required>
+    <input type="text" placeholder="ID" name="student_id" id="ID" required>
+
+     <table class="table table-striped table-hover">
+    
+     <tr>
+      <th scope="col">Student ID</th>
+      <th scope="col">Date Rent</th>
+      <th scope="col">Deadline</th>
+      <th scope="col">Status</th>
+      <th scope="col">Book ID</th>
+    </tr>
+    <td>ssdsd</td><td>sasaassa</td><td>sasaassa</td><td>sasaassa</td><td>sasaassa</td>
+    </table>
 
     <button type="submit" class="registerbtn">Submit</button>
   </div>
 </form>
-</div>
-
-
-
-
-
-
-<div class="formContent2">
-  <form class="modal-content animate">
-  <div class="container">
-    <h1>Add Book</h1>
-    <hr>
-    <form class="modal-content animate addBook" method="GET" action="{{ route('/form')}}" enctype="multipart/form-data">
-            {{ csrfField() }}
-    <div class="container">
-      <label for="book_id"><b>Barcode</b></label>
-      <input type="text" placeholder="Enter Barcode" name="book_id" required>
-      <label for="book_name"><b>Book name</b></label>
-      <input type="text" placeholder="Enter Book name" name="book_name" required>
-      <div class="select">
-      <select name="book_category" id="slct">
-            <option selected disabled>Category</option>
-            <option value="1">หนังสือโป๊</option>
-            <option value="2">หนังสือCNX</option>
-       </select>
-  
-      </div>
-      <div class="form-file">
-          <input type="file" class="book_img" id="customFile">
-          {{--  <label class="form-file-label" for="customFile">
-            <span class="form-file-text">Choose file...</span>
-            <span class="form-file-button">Browse</span>
-          </label>  --}}
-        </div>
-      <button class="button" type="submit">Login</button>
-    </div>
-  </form>
-    
-  </form>
-
 </div>
 
 </body>

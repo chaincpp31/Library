@@ -14,6 +14,7 @@ class AdminUserSchema extends Schema {
   }
 
   down () {
+    this.drop('admin_users')
   }
 }
 

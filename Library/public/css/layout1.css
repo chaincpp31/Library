@@ -31,6 +31,7 @@ html,body{
     width: 8%;
     height: 8%;
 }
+
 .btn btn-outline-success{
     width: 1em;
 }
@@ -74,4 +75,9 @@ html,body{
     background-color: rgba(0, 0, 0, 0.507); 
     z-index: 95;
     transition: all 0.3s ;
+<<<<<<< HEAD:Library/public/CSS/layout1.css
 }
+=======
+}
+
+>>>>>>> 93674df3d3166624df09650d4a6cea013df6a98b:Library/public/css/layout1.css

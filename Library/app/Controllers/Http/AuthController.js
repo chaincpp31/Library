@@ -3,6 +3,8 @@
 const Database = use("Database");
 const Helpers = use('Helpers')
 
+
+
 class AuthController {
     async login ({view,request,response}) {
         return view.render("login");
@@ -43,38 +45,85 @@ class AuthController {
     }
 
 
-    async formLogin({request,response}){
-        const {username,password} = request.body
-        await Database.from("admin_users").insert({username,password});
-        console.log(username,password)
+    async formLogin({view,request,response}){
+        const {usernameform,passwordform} = request.body
+    
+        const data = await Database.select('*').from("admin_users").where({username: usernameform}) ;
 
-        return response.redirect("/form")
+        console.log(data)
+        if (data.length == 0){
+            return view.render("formLogin")
+        }
+        else {
+            const user = data[0].username
+            const pass = data[0].password 
+            if (user == usernameform && pass == passwordform)
+            return response.redirect("/formstatus", {tokenfake})
+            
+        }
     }
+
+    
+    
     //insert add book and del
-    formstatus({view,request, response}){
 
+    formadd({view}){
+        return view.render("formadd")
+    }
+
+    async formaddbook({ request, response }) {
         let name_img = Math.random().toString(36).substring(7); //random name
-
-
-        const { book_id, book_name, book_category} = request.body
-        const bookimg = request.file('book_img', {
-            types: ['image'],
-            size: '2mb'
-        })
-        
-        await bookimg.move(Helpers.tmpPath('uploads'), {
-            name: name_img+'.jpg',
-            overwrite: true
-        })
-        
-        const book_img = 'uploads/' + name_img + '.jpg'
-
-
-        const data = await Database.from("books").insert({ book_id, book_name, book_img, book_category});
-
-
+        const { book_add_del } = request.body
+        //if 1 = ADD  else 2 ==Del
+        if (parseInt(book_add_del) == 1) {
+            const { book_id, book_name, book_category } = request.body
+            let name_img = Math.random().toString(36).substring(7); //random name
+            const bookimg = request.file('book_img', {
+                types: ['image'],
+                size: '2mb'
+            })
+            await bookimg.move(Helpers.tmpPath('uploads'), {
+                name: name_img + '.jpg',
+                overwrite: true
+            })
+            const book_img = 'uploads/' + name_img + '.jpg'
+            await Database.from("books").insert({ book_id, book_name, book_img, book_category });
+            console.log(book_id, book_name)
+        }
+        else {
+            const { book_id } = request.body
+            await Database.from("books").where({book_id}).del()
+        }
         return response.redirect("/Index")
 
+    }
+
+    formstatusget({ view }) {
+        return view.render("formstatus")
+    }
+    //rent-restore
+    async formstatus({ request, response }) {
+        let name_img = Math.random().toString(36).substring(7); //random name
+        const { book_rent_restore } = request.body
+        //if 1 = rent  else 2 ==restore
+        if (parseInt(book_rent_restore) == 1) {
+            const { book_id, student_id } = request.body
+            var d = new Date();
+            var date_rent = parseInt(d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString());
+            var deadline = date_rent + 7;
+            //toString
+            date_rent = date_rent.toString();
+            deadline = deadline.toString();
+            const status = "ถูกยืม"
+            const book_img = 'uploads/' + name_img + '.jpg'
+            await Database.from("status_books").insert({ student_id, book_id, date_rent, deadline, status });
+        }
+        else {
+            const { student_id } = request.body
+            const student_del_id = student_id;
+            await Database.table("status_books").where({ student_id: student_del_id }).delete()
+        }
+        return response.redirect("/formstatus")
     }
 }
 

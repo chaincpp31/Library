@@ -1,5 +1,7 @@
 'use strict'
 
+const { route } = require('@adonisjs/framework/src/Route/Manager')
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -21,36 +23,50 @@ const Helpers = use('Helpers') //for กันแตกส้งรูปภา�
 Route.on('/').render('home')
 // Route.on("/login").render("login")
 
-Route.get("/login" ,"AuthController.login")
-Route.post("/login","AuthController.loginUser")
+// Route.get("/login" ,"AuthController.login")
+// Route.post("/login","AuthController.loginUser")
 
 // Route.get("/register" ,"AuthController.register");
 
 // Route.on('/').render('welcome')
 // Route.get("/register","AuthController.register");
 
-//Route.on('/login').render("login");
-Route.get("/register", "AuthController.register")
-Route.post("register", "AuthController.registerUser")
+// //Route.on('/login').render("login");
+// Route.get("/register", "AuthController.register")
+// Route.post("register", "AuthController.registerUser")
 
-Route.post("/api/register", "AuthController.registerUser")
+// Route.post("/api/register", "AuthController.registerUser")
 
-Route.get("/login", "AuthController.login")
-Route.post("/login", "AuthController.loginUser")
+// Route.get("/login", "AuthController.login")
+// Route.post("/login", "AuthController.loginUser")
 
 //project workspace
 
-Route.on('/layout1').render('layout1')
-Route.on('/Index').render('Index')
+// Route.on('/layout1').render('layout1')
+ Route.on('/Index').render('Index')
 // Route.get('/form').render('formlogin')
 
-//Route.get("/form", "AuthController.form")
-//Route.post("/form", "AuthController.formLogin")
+Route.get("/form", "AuthController.form")
+Route.post("/form", "AuthController.formLogin")
 
 //Route.on('/formstatus').render('formstatus')
 
 
-Route.get("/form", "AuthController.formstatus")
+//status form
+
+
+Route.get('/formadd', "AuthController.formadd")
+Route.post('/formadd', "AuthController.formaddbook")
+
+
+Route.get('/formstatus', "AuthController.formstatusget")
+Route.post('/formstatus', "AuthController.formstatus")
+
+
+Route.get('/formstatus', "AuthController.formstatusget")
+Route.post('/formstatus', "AuthController.formstatus")
+
+Route.get('/Index_admin',"AuthCintroller.Index_admin")
 
 
 
