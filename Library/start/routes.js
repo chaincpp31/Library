@@ -15,6 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const Helpers = use('Helpers') //for กันแตกส้งรูปภาพ
 
 
 Route.on('/').render('home')
@@ -43,10 +44,13 @@ Route.on('/layout1').render('layout1')
 Route.on('/Index').render('Index')
 // Route.get('/form').render('formlogin')
 
-Route.get("/form", "AuthController.form")
-Route.post("/form", "AuthController.formLogin")
+//Route.get("/form", "AuthController.form")
+//Route.post("/form", "AuthController.formLogin")
 
-Route.on('/formstatus').render('formstatus')
+//Route.on('/formstatus').render('formstatus')
+
+
+Route.get("/form", "AuthController.formstatus")
 
 
 

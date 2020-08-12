@@ -1,6 +1,7 @@
 'use strict'
 
 const Database = use("Database");
+const Helpers = use('Helpers')
 
 class AuthController {
     async login ({view,request,response}) {
@@ -48,6 +49,32 @@ class AuthController {
         console.log(username,password)
 
         return response.redirect("/form")
+    }
+    //insert add book and del
+    formstatus({view,request, response}){
+
+        let name_img = Math.random().toString(36).substring(7); //random name
+
+
+        const { book_id, book_name, book_category} = request.body
+        const bookimg = request.file('book_img', {
+            types: ['image'],
+            size: '2mb'
+        })
+        
+        await bookimg.move(Helpers.tmpPath('uploads'), {
+            name: name_img+'.jpg',
+            overwrite: true
+        })
+        
+        const book_img = 'uploads/' + name_img + '.jpg'
+
+
+        const data = await Database.from("books").insert({ book_id, book_name, book_img, book_category});
+
+
+        return response.redirect("/Index")
+
     }
 }
 

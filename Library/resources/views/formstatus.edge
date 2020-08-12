@@ -8,7 +8,8 @@
 <body>
 
     <div class="formContent1">
-<form class="modal-content animate">
+<form class="modal-content animate" method="POST" action="{{ route('/form')}}">
+            {{ csrfField() }}
   <div class="container">
     <h1> Admin </h1>
     <hr>
@@ -32,12 +33,18 @@
   </div>
 </form>
 </div>
+
+
+
+
+
+
 <div class="formContent2">
   <form class="modal-content animate">
   <div class="container">
     <h1>Add Book</h1>
     <hr>
-    <form class="modal-content animate" method="POST" action="{{ route('/form')}}">
+    <form class="modal-content animate addBook" method="GET" action="{{ route('/form')}}" enctype="multipart/form-data">
             {{ csrfField() }}
     <div class="container">
       <label for="book_id"><b>Barcode</b></label>
@@ -45,12 +52,20 @@
       <label for="book_name"><b>Book name</b></label>
       <input type="text" placeholder="Enter Book name" name="book_name" required>
       <div class="select">
-      <select name="slct" id="slct">
-    <option selected disabled>Category</option>
-    <option value="1">ยืม</option>
-    <option value="2">คืน</option>
-  </select>
+      <select name="book_category" id="slct">
+            <option selected disabled>Category</option>
+            <option value="1">หนังสือโป๊</option>
+            <option value="2">หนังสือCNX</option>
+       </select>
+  
       </div>
+      <div class="form-file">
+          <input type="file" class="book_img" id="customFile">
+          {{--  <label class="form-file-label" for="customFile">
+            <span class="form-file-text">Choose file...</span>
+            <span class="form-file-button">Browse</span>
+          </label>  --}}
+        </div>
       <button class="button" type="submit">Login</button>
     </div>
   </form>
