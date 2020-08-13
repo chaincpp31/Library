@@ -43,11 +43,25 @@ Route.on('/').render('home')
 //project workspace
 
 // Route.on('/layout1').render('layout1')
- Route.on('/Index').render('Index')
+Route.on('/Index').render('Index')
+//Route.get("/Index", "AuthController.IndexAdmin")
+Route.on('/Index_admin').render('Index_admin')
+
+
+
+//search
+Route.post('/search', "AuthController.search")
+Route.get('/search', "AuthController.searchget")
+
 // Route.get('/form').render('formlogin')
 
 Route.get("/form", "AuthController.form")
+
 Route.post("/form", "AuthController.formLogin")
+
+Route.get("/formlogin", "AuthController.form")
+
+Route.get("/formlogout", "AuthController.formlogout")
 
 //Route.on('/formstatus').render('formstatus')
 
@@ -67,9 +81,5 @@ Route.get('/formstatus', "AuthController.formstatusget")
 Route.post('/formstatus', "AuthController.formstatus")
 
 Route.get('/Index_admin',"AuthCintroller.Index_admin")
-
-
-
-
 
 

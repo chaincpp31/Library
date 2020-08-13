@@ -52,12 +52,17 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <img src="{{assetsUrl("image/camt_horizontal.png")}}">
-          <form class="d-flex" method="POST">
+
+
+          <form class="d-flex" method="POST" action="{{route('/search')}}" >
+            {{ csrfField() }}
             <div class="search-btnSubmit">
-                <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-2" type="search" name="search" placeholder="ค้นหาหนังสือ" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </div>
           </form>
+
+          
           <!--menu btn-->
           <button class="navbar-toggler" type="button" onclick="toggleNav()" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,11 +78,10 @@
     <div  id="menu-bar" >
       <ul>
         <div class="li-menu">
-            <a href="#carousel-home"><li>หน้าหลัก</li>
-            <a href="#covid19"><li>สถานะ Covid-19</li>
-            <a href="#newbook"><li>หนังสือใหม่</li>
-            <a href="#rule"><li>กฎระเบียบ</li>
-            <a href="#about"><li>About me</li>
+            <a href="#carousel-home"><li>หน้าหลัก</li></a>
+            <a href="#covid19"><li>สถานะ Covid-19</li></a>
+            <a href="#rule"><li>กฎระเบียบ</li></a>
+            <a href="#about"><li>About me</li></a>
         </div>
       </ul>
 

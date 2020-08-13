@@ -7,12 +7,6 @@
 @section("content")
 <body>
 
-  {{tokenfake}}
-  <script>
-      document.getElementById("token").innerHTML = tokenfake;
-
-
-  </script>
     <div class="formContent1">
 <form class="modal-content animate" method="POST" action="{{ route('/formstatus')}}">
             {{ csrfField() }}

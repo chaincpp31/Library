@@ -4,32 +4,33 @@ const Database = use("Database");
 const Helpers = use('Helpers')
 
 
+let sessionAdmin = 1;
 
 class AuthController {
-    async login ({view,request,response}) {
-        return view.render("login");
-        // const users = await Database.select("*").from("profiles").where({name: "John"})
-        // .whereNot({age:20})
-        // .whereBetween('age',[18,32]);
-        // const name = "Ponlawat";
-        // const age = 20;
-        // const friends = ["Sue", "Bam", "Friend", "Fern"];
-        // const address = {
-        //     postcode: "10140",
-        //     country: "Thailand",
-        // }
+    // async login ({view,request,response}) {
+    //     return view.render("login");
+    //     // const users = await Database.select("*").from("profiles").where({name: "John"})
+    //     // .whereNot({age:20})
+    //     // .whereBetween('age',[18,32]);
+    //     // const name = "Ponlawat";
+    //     // const age = 20;
+    //     // const friends = ["Sue", "Bam", "Friend", "Fern"];
+    //     // const address = {
+    //     //     postcode: "10140",
+    //     //     country: "Thailand",
+    //     // }
 
-        // return view.render("login", { name, age, friends, address })
-    }
-    loginUser({view,request,response}){
-        const {username,password} = request.body
-        // const profile = request.body
-        // console.log(profile)
+    //     // return view.render("login", { name, age, friends, address })
+    // }
+    // loginUser({view,request,response}){
+    //     const {username,password} = request.body
+    //     // const profile = request.body
+    //     // console.log(profile)
 
-        // return view.render("login")
-        return response.redirect("/login")
+    //     // return view.render("login")
+    //     return response.redirect("/login")
 
-    }
+    // }
     // register  ({view})  {
     //     return view.render("register")
     // }
@@ -40,8 +41,13 @@ class AuthController {
 
     //     return response.redirect("/login")
     // }
+
+    IndexAdmin({ view }){
+        return view.render("Index_admin")
+    }
+
     form ({view}) {
-        return view.render("formLogin")
+        return view.render("formLogin",{ sessionAdmin })
     }
 
 
@@ -52,15 +58,23 @@ class AuthController {
 
         console.log(data)
         if (data.length == 0){
+            sessionAdmin =1;
             return view.render("formLogin")
         }
         else {
             const user = data[0].username
             const pass = data[0].password 
-            if (user == usernameform && pass == passwordform)
-            return response.redirect("/formstatus", {tokenfake})
+            if (user == usernameform && pass == passwordform){
+                sessionAdmin = 2;
+                return response.redirect("/formstatus", {sessionAdmin})
+            }
             
         }
+    }
+
+    async formlogout({response}) {
+        sessionAdmin = 1;
+        return response.redirect("/formlogin")
     }
 
     
@@ -68,7 +82,7 @@ class AuthController {
     //insert add book and del
 
     formadd({view}){
-        return view.render("formadd")
+        return view.render("formadd", { sessionAdmin })
     }
 
     async formaddbook({ request, response }) {
@@ -94,13 +108,17 @@ class AuthController {
             const { book_id } = request.body
             await Database.from("books").where({book_id}).del()
         }
-        return response.redirect("/Index")
+        return response.redirect("/formadd", { sessionAdmin })
 
     }
 
     formstatusget({ view }) {
-        return view.render("formstatus")
+        return view.render("formstatus", { sessionAdmin })
     }
+
+
+
+
     //rent-restore
     async formstatus({ request, response }) {
         let name_img = Math.random().toString(36).substring(7); //random name
@@ -123,7 +141,27 @@ class AuthController {
             const student_del_id = student_id;
             await Database.table("status_books").where({ student_id: student_del_id }).delete()
         }
-        return response.redirect("/formstatus")
+        return response.redirect("/formstatus", { sessionAdmin })
+    }
+
+    //search
+
+    searchget({ view }) {
+
+        return view.render("search")
+
+    }
+    async search({ request, response }){
+        const { search } = request.body
+
+        const dataSearch = await Database.select('*').from("books").where({ book_name: search});
+
+        console.log(dataSearch)
+
+        //console.log(dataSearch[0].book_name )
+        return response.redirect("/search", { dataSearch})
+
+        
     }
 }
 

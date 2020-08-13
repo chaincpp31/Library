@@ -10,7 +10,7 @@
   <div class="container">
     <h1>Add Book</h1>
     <hr>
-    <form class="modal-content animate addBook" method="POST" action="{{route('/formstatus')}}" enctype="multipart/form-data">
+    <form class="modal-content animate addBook" method="POST" action="{{route('/formadd')}}" enctype="multipart/form-data">
             {{ csrfField() }}
     <div class="container">
       <label for="book_id"><b>Barcode</b></label>
@@ -20,8 +20,8 @@
       <div class="select">
       <select name="book_category" id="slct">
             <option selected disabled>Category</option>
-            <option value="1">หนังสือโป๊</option>
-            <option value="2">หนังสือCNX</option>
+            <option value="3">หนังสือโป๊</option>
+            <option value="4">หนังสือCNX</option>
       </select>
       </div>
       <div class="select">

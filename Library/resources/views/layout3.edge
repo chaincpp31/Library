@@ -11,7 +11,27 @@
     {{ style("css/layout1") }}
     {{ style("css/Index")}}
     
-    
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '935371073635530',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v8.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     <title>CAMT Library</title>
     @!section("section-head")
     
@@ -23,20 +43,7 @@
     <title>CAMT Library</title>
     @!section('head')
 </head>
-
 <body>
-
-  <!--check Admin--> 
-  <script>
-
-    console.log({{sessionAdmin}})
-
-    const token = {{sessionAdmin}};
-    if(token == 1){
-      window.location.href = "formlogin"
-    }
-
-  </script>
    <!--JS Bootstrap-->
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js" integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl" crossorigin="anonymous"></script>
@@ -47,7 +54,6 @@
           <img src="{{assetsUrl("image/camt_horizontal.png")}}">
 
 
-
           <form class="d-flex" method="POST" action="{{route('/search')}}" >
             {{ csrfField() }}
             <div class="search-btnSubmit">
@@ -56,8 +62,7 @@
             </div>
           </form>
 
-
-
+          
           <!--menu btn-->
           <button class="navbar-toggler" type="button" onclick="toggleNav()" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,22 +78,16 @@
     <div  id="menu-bar" >
       <ul>
         <div class="li-menu">
-        <a href="Index_admin" ><li>หน้าหลัก</li></a>
-        <a href="Index_admin"><li>สถานะ Covid-19</li></a>
-        <a href="Index_admin"><li>กฎระเบียบ</li></a>
-        <a href="Index_admin"><li>About me</li></a>
-        <a href="formstatus"><li>ยืม/คืน หนังสือ</li></a>
-        <a href="formadd"><li>เพิ่ม/ลด หนังสือ</li></a>
-        <form action="{{ route('/formlogout')}}" method="GET">
-            <a href="javascript:;" onclick="parentNode.submit();"><li>ออกจากระบบ</li></a>
-        </form>
+            <a href="Index"><li>หน้าหลัก</li></a>
+            <a href="Index"><li>สถานะ Covid-19</li></a>
+            <a href="Index"><li>กฎระเบียบ</li></a>
+            <a href="Index"><li>About me</li></a>
         </div>
       </ul>
 
     </div>
     <script>
       
-
       function toggleNav() {
             var element = document.getElementById("menu-bar");
             var bodyEle = document.getElementById("body-content");

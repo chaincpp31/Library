@@ -1,0 +1,36 @@
+@layout("layout1")
+
+@section('head')
+
+  {{ style("css/Index") }}
+  <!--Import Animate On Scroll Library-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+@endsection
+
+@section("content")
+<!--Start Library AOS-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+ 
+
+</script>
+
+<script>
+     let arr =  {{  dataSearch }}
+    for(arr1 in arr){
+        console.log(arr)
+    }
+</script>
+
+
+
+
+
+  
+
+
+
+@endsection

@@ -1,0 +1,156 @@
+@layout("layout2")
+
+@section('head')
+
+  {{ style("css/Index") }}
+  <!--Import Animate On Scroll Library-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+@endsection
+
+@section("content")
+<!--Start Library AOS-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!--slide bar -->
+<div class="bg-carousel">
+  <div id="carousel-home" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-home" data-slide-to="1"></li>
+        <li data-target="#carousel-home" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{assetsUrl("image/indeximg3.jpg")}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{{assetsUrl("image/indeximng2.jpg")}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{{assetsUrl("image/Indeximg4.jpg")}}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+          <div class="textcarousel" data-aos="zoom-in" >
+            <div class="carousel-text-welcome">Welcome<br></div>
+            <div class="carousel-text-camt">Cerativity And Learning Room : College Of Arts, Media And Technology</div>
+        </div>
+      <div class="control-imgIndex">
+          <a class="carousel-control-prev" href="#carousel-home" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-home" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+    </div>
+    <!-- Covide-19 -->
+    <div class="container-covidAll" id="covid19">
+    <div class="container-covid1" data-aos="flip-left">
+          <div class="item-covid1 " >
+          <div class="card text-white bg-danger mb-3" >
+            <div class="card-header">ติดเชื้อสะสม</div>
+            <div class="card-body">
+              <h5 class="card-title" id="Confirmed"></h5>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container-covid2">
+        <!--Get well-->
+        <div class="item-covid " data-aos="flip-up">
+        <div class="card text-white bg-success mb-3">
+          <div class="card-header">หายแล้ว</div>
+          <div class="card-body">
+            <h5 class="card-title" id="Recovered"></h5>
+          </div>
+        </div>
+      </div>
+        <!--hospital -->
+        <div class="item-covid " data-aos="flip-right">
+        <div class="card text-body  bg-info mb-3">
+          <div class="card-header">รักษาตัวอยู่ที่โรงพยาบาล</div>
+          <div class="card-body">
+            <h5 class="card-title" id="Hospitalized"></h5>
+          </div>
+        </div>
+      </div>
+        <!--Death-->
+        <div class="item-covid" data-aos="flip-down" >
+        <div class="card text-white bg-secondary mb-3" >
+          <div class="card-header">เสียชีวิต</div>
+          <div class="card-body">
+            <h5 class="card-title" id="Deaths"></h5>
+          </div>
+        </div> 
+    </div>
+    </div>
+  </div>
+
+
+    <!--  API Covid-19 Connect   -->
+        {{ script("js/APIconnect") }} 
+        <script> 
+        callCovid()
+       </script>
+
+  
+  <!--rule-->
+  <div  class="container-rule-fix"  id="rule">
+      <div class="container-rule">
+        
+        <div class="container-chat">
+
+          <div class="kuy-1"><div class="item-chat1"  data-aos="fade-up"
+            data-aos-duration="3000">เวลาให้บริการของห้องสมุด</div></div>
+          <div class="kuy-1"><div class="item-chat2" data-aos="fade-up"
+            data-aos-duration="3000">ห้องสมุดเปิดให้บริการช่วงเปิดภาคเรียน <br> จันทร์ - อาทิตย์ 08.30 - 16.30 น.</div></div>
+          <div class="kuy-1"><div class="item-chat2" data-aos="fade-up"
+            data-aos-duration="3000">ห้องสมุดปิดให้บริการในวันหยุดนักขัตฤกษ์และวันหยุดชดเชย ตามประกาศของทาง ราชการ</div></div>
+          <div class="kuy-1"><div class="item-chat1" data-aos="fade-up"
+            data-aos-duration="3000">หน้าที่และความรับผิดชอบของผู้ใช้บริการ</div></div>
+          <div class="kuy-1"><div class="item-chat2" data-aos="fade-up"
+            data-aos-duration="3000">- ไม่พูดคุยเสียงดังและรบกวนผู้อื่น
+            <br> - ไม่ใช้เครื่องมือสื่อสารทุกชนิดขณะเข้าห้องสมุด
+            <br> - ไม่ใช้สิ่งของทุกชนิดวางจองโต๊ะที่นั่ง
+            <br> - ไม่นำอาหารและเครื่องดื่มเข้าห้องสมุด
+          </div></div>
+          <div class="kuy-1"><div class="item-chat2" data-aos="fade-up"
+            data-aos-duration="3000"> - ไม่นำสัตว์ทุกชนิดเข้าห้องสมุด
+            <br> - ไม่ทำความสกปรกในห้องสมุด
+            <br> - ห้ามฉีก กรีด ขีดเขียนหรือทำลาย สิ่งพิมพ์ทุกชนิดของห้องสมุด</div></div>
+          <div class="kuy-1"><div class="item-chat2" data-aos="fade-up"
+            data-aos-duration="3000">-ห้ามเล่นการพนัน และเกมในห้องสมุด
+            <br> - ส่งคืนหนังสือให้กับห้องสมุดตรงตามระยะเวลาที่กำหนด
+            <br> - ยินยอมให้เจ้าหน้าที่ตรวจสอบหนังสือและสิ่งของก่อนออกจากห้องสมุด</div></div>
+
+        
+
+        </div>
+
+          
+      </div>
+  </div>
+    <!--about us-->
+    
+    <div class="container-about"  id="about">
+          <div class="kuy-3">
+            <div class="item-chat3"  data-aos="fade-up"
+            data-aos-duration="3000"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; มหาวิทยาลัยเชียงใหม่ ซึ่งเป็นมหาวิทยาลัยหลักของจังหวัดเชียงใหม่และภาคเหนือ มีความพร้อมด้านบุคลากร วิชาการ สาธารณูปโภคและสาธารณูปการ พร้อมที่จะก้าวสู่การเป็นศูนย์กลางระดับนานาชาติในการจัดการศึกษาและวิจัย เพื่อตอบสนองนโยบายรัฐบาลในการพัฒนาเชียงใหม่ให้เป็นศูนย์กลางในด้านต่าง ๆ โดยมุ่งเน้นการพัฒนาทรัพยากรมนุษย์และการสร้างองค์ความรู้ใหม่เพื่อสนับสนุนภาครัฐ เอกชนและชุมชนในเขตภาคเหนือ จึงได้นำเสนอกลยุทธ์เพื่อการพัฒนาขีดความสามารถในการแข่งขันของเชียงใหม่ในยุคเศรษฐกิจใหม่ ในการสัมมนายุทธศาสตร์การพัฒนาขีดความสามารถในการแข่งขันของภาคเหนือเมื่อวันที่ 11 เมษายน 2546 โดยเสนอโครงการสร้างขีดความสามารถในการแข่งขันเน้นการพัฒนากลุ่มแข่งขัน (Competitive Cluster) อุตสาหกรรมการท่องเที่ยว หัตถอุตสาหกรรมและอุตสาหกรรมซอฟแวร์ในภาคเหนือพร้อม ๆ กัน และได้นำเข้าที่ประชุมคณะรัฐมนตรี โดยได้รับอนุมัติโครงการในวันที่ 22 กรกฏาคม 2549 เป็นกรอบงบประมาณทั้งสิ้น 464.3 ล้านบาท
+
+      มหาวิทยาลัยเชียงใหม่ จึงได้ทำการจัดตั้งวิทยาลัยเทคโนโลยีสารสนเทศ การสื่อสาร สื่อและศิลปะ (College of Arts, Media and ICT) ขึ้น เพื่อบูรณาการสาขาวิชาต่าง ๆ ที่เกี่ยวเนื่องให้มีความสอดคล้อง (Synergy) เพื่อที่จะทำให้สามารถสนับสนุนด้านวิชาการ แก่กลุ่มแข่งขันอุตสาหกรรมในท้องถิ่น รวมทั้งรองรับโครงการด้านการพัฒนาขีดความสามารถในการแข่งขันของจังหวัดเชียงใหม่และรัฐบาลในระยะยาว
+            </div>
+          </div>
+    </div>
+
+
+  </>
+
+
+
+@endsection
