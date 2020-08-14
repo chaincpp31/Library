@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-08-13T19:03:03.938Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36" etag="8n3s2McT9W9dWjCMZCiT" version="13.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2020-08-14T02:12:58.359Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36" etag="ncypK3cy7OahpfJJaLOD" version="13.6.2" type="github">
   <diagram name="Page-1" id="9f46799a-70d6-7492-0946-bef42562c5a5">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,7 +12,7 @@
         <mxCell id="_1K_RVi26k8naEU3XdXL-1" value="&lt;h2&gt;Index (user)&lt;/h2&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="50" y="80" width="110" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="_1K_RVi26k8naEU3XdXL-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="_1K_RVi26k8naEU3XdXL-4" target="_1K_RVi26k8naEU3XdXL-1">
+        <mxCell id="_1K_RVi26k8naEU3XdXL-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_1K_RVi26k8naEU3XdXL-4" target="_1K_RVi26k8naEU3XdXL-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_1K_RVi26k8naEU3XdXL-4" value="&lt;h2&gt;#หน้าหลัก&lt;br&gt;#covid-19 API&lt;br&gt;#กฏระเบียบ&lt;br&gt;#About me&lt;/h2&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
@@ -49,6 +49,9 @@
           <mxGeometry x="330" y="240" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="_1K_RVi26k8naEU3XdXL-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="_1K_RVi26k8naEU3XdXL-12" target="_1K_RVi26k8naEU3XdXL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_1K_RVi26k8naEU3XdXL-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="_1K_RVi26k8naEU3XdXL-12" target="_1K_RVi26k8naEU3XdXL-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_1K_RVi26k8naEU3XdXL-12" value="Book manage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
